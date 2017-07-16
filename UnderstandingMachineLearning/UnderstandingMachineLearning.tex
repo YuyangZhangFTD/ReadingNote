@@ -3,6 +3,7 @@
 \usepackage{mathrsfs}
 \usepackage{extarrows}
 \usepackage{amsmath}
+\usepackage{amssymb}
 \DeclareMathOperator*{\argmax}{arg\,max}
 \usepackage{enumerate}
 
@@ -22,6 +23,13 @@
 \tableofcontents
 \newpage
 
+
+
+% ============================================================
+%
+%			第一章 Why can machine learn
+%
+% ============================================================
 
 \section{why can machine learn}
 \subsection{基本符号}
@@ -76,11 +84,11 @@ $\mathcal{A}=\{x\in\mathcal{X}:\pi(x)=1\}$，
 其中$\pi:\mathcal{X}\rightarrow\{0,1\}$，
 表示样本是否被观测到。
 我们也将$\mathcal{D}(\mathcal{A})$写作
-$\mathcal{P}_{x\sim\mathcal{D}} [\pi(x)]$。
+$\mathbb{P}_{x\sim\mathcal{D}} [\pi(x)]$。
 此时我们可以定义假设$h$的错误率为：
 $$
 \mathcal{L}_{\mathcal{D},f}(h)\xlongequal{def}
-\mathcal{P}_{x\sim\mathcal{D}} [h(x)\neq f(x)]\xlongequal{def}
+\mathbb{P}_{x\sim\mathcal{D}} [h(x)\neq f(x)]\xlongequal{def}
 \mathcal{D}(\{x|h(x)\neq f(x)\})
 $$
 其中误差的测量是基于概率分布$\mathcal{D}$和标记函数$f$的，
@@ -146,7 +154,7 @@ $L1$正则化表明我们的归纳偏好是更喜欢参数稀疏的假设。
 在真实世界中表现也足够好。
 
 
-\textbf{定义1 \textit{可实现性假设}
+\textbf{定义1.1 \textit{可实现性假设}
 存在$h^*\in\mathcal{H}$，
 使得$\mathcal{L}_{\mathcal{D},f}(h^*)=0$。}：
 
@@ -349,7 +357,7 @@ m \geq \frac{\ln(|\mathcal{H}|/\delta)}{\epsilon}
 $$
 
 \textbf{
-推论1 设$\mathcal{H}$为一个有限假设集合，
+推论1.1 设$\mathcal{H}$为一个有限假设集合，
 $\delta\in(0,1)$，$\epsilon>0$，当
 $$
 m \geq \frac{\ln(|\mathcal{H}|/\delta)}{\epsilon}
@@ -385,14 +393,223 @@ $$
 \item 当样本足够充足时，学习到的假设概率近似正确。
 \end{enumerate}
 
+\newpage
 
 
+% ============================================================
+%
+%			第二章 Probably Approximately Correct
+%
+% ============================================================
+\section{Probably Approximately Correct}
+\subsection{PAC学习理论}
+\subsubsection{PAC可学习}
+接着上一章继续说，
+在经验风险最小化准则下，
+对于一个有限假设类，
+如果有足够多的训练样本，
+则我们输出的学习算法在真实世界中，
+是概率近似正确的。我们做以下定义：
+
+\textbf{
+定义2.1
+\textit{PAC可学习}
+若存在一个函数$m_{\mathcal{H}}:{(0,1)}^2\rightarrow\mathcal{N}$
+和一个学习算法，使得对于给定的$\epsilon,\delta\in(0,1)$
+和任一分布$\mathcal{D}$、
+任一标记函数$f:\mathcal{X}\rightarrow\{0,1\}$，
+可实现假设成立时，
+那么当样本数量$m\geq m_{\mathcal{H}}(\epsilon,\delta)$时，
+算法将以不小于$1-\delta$的概率返回一个使
+$$\mathcal{L}_{\mathcal{D},f}(h)\leq\epsilon$$
+的假设$h$。
+}
+
+\subsubsection{采样复杂度}
+函数$m_{\mathcal{H}}:(0,1)^2\rightarrow\mathcal{N}$
+决定了假设的采样复杂度，即可以学到东西时所需要的样本数量。
+采样复杂度不仅依赖于$\epsilon$和$\delta$，
+同样还依赖于假设空间中的假设数量：
+$$
+m_{\mathcal{H}}=\frac{\ln(|\mathcal{H}|/\delta)}{\epsilon}
+$$
+其与假设数量的对数成正比。
+
+\textbf{
+推论2.1
+当采样复杂度满足：
+$$
+m_{\mathcal{H}}(\epsilon,\delta)
+\leq\lceil 
+\frac{\ln(|\mathcal{H}|/\delta)}{\epsilon}
+\rceil
+$$
+则任一有限类假设是PAC可学习的。
+}
+
+$m_{\mathcal{H}}(\epsilon,\delta)$被称为
+假设结合$\mathcal{H}$的采样复杂度的最小函数。
+由上述定义我们可知，一个假设是否是PAC可学习的，
+还依赖于假设空间的大小，
+而假设空间则与VC维相关，将会在后几章说明。
+
+\subsection{泛化PAC理论}
+为了让该理论更贴近实际，
+则我们考虑将理论的前提约束放宽，进行泛化。
+\begin{enumerate}
+\item 去掉可实现性假设。
+\item 考虑多分类、回归等问题。
+\end{enumerate}
+
+\subsection{不可知PAC学习}
+当我们放弃可实现假设时，我们称之为不可知，
+具体可以理解为：
+完全一样的样本，却又不同的标记，这种情况下，
+我们的算法如何学到东西。
+
+从此处开始，为了简写，我们将
+$\mathcal{D}$定义为$\mathcal{X}\times\mathcal{Y}$上的概率分布，
+即将之前$\mathcal{D}$和$f$简写在一起，
+作为领域集和标签集的联合概率分布，定义真实误差为：
+$$
+\mathcal{L}_{\mathcal{D}}(h)
+\xlongequal{def}
+\mathbb{P}_{(x,y)\sim\mathcal{D}}[h(x)\neq y]
+\xlongequal{def}
+\mathcal{D}(\{(x,y):h(x)\neq y\})
+$$
+
+在面对不可知的情况下，最好的预测器为贝叶斯预测器：
+$$
+f_{\mathcal{D}}(x)=
+\begin{cases}
+1& \mathbb{P}[y=1|x]\geq\frac{1}{2}\\
+0& else
+\end{cases}
+$$
+我们易证贝叶斯预测器是最优的：
+对于每个领域集的实例$x\in\mathcal{X}$
+都选择数量较多的类别，
+即每个实例的分类正确概率都大于$1/2$，
+没有其他分类器可以达到比它更低的错误率，对于任意预测器$g$都有
+$\mathcal{L}_{\mathcal{D}}(f_{\mathcal{D}})
+\leq \mathcal{L}_{\mathcal{D}}(g)$，
+所以该预测器最优。
+但我们并不知道实际的概率分布$\mathcal{D}$，
+所以我们并没法使用这样的预测器。
+
+所以对于不可知问题，我们只能选择容忍
+（看来统计的机器学习就是一个容忍的过程Orz）：
+
+\textbf{
+定义2.2 \textit{不可知PAC可学习}
+若存在一个函数$m_{\mathcal{H}}:{(0,1)}^2\rightarrow\mathcal{N}$和
+一个学习算法，
+使得对于给定的$\epsilon,\delta\in(0,1)$
+和任一分布$\mathcal{D}$，
+当样本数量$m\geq m_{\mathcal{H}}(\epsilon,\delta)$时，
+算法将以不小于$1-\delta$的概率返回一个使
+$$\mathcal{L}_{\mathcal{D}}(h)\leq
+\min_{h'\in\mathcal{H}}\mathcal{L}_{\mathcal{D}}(h')+\epsilon
+$$
+成立的假设$h$。
+}
+
+\subsection{学习问题建模}
+此节我们讨论学习问题建模，总的来说，除了二分类问题，
+学习任务还分为以下几种：
+\begin{itemize}
+\item 多分类
+\item 回归
+\end{itemize}
+虽然说学习任务分为多种，但主要区别只在于损失函数不同。
+
+\subsubsection{广义损失函数}
+给定任意集合$\mathcal{H}$和定义域
+$\mathcal{Z}=\mathcal{X}\times\mathcal{Y}$，令
+$\ell$为$\mathcal{H}\times\mathcal{Z}$到非负实数的映射，
+记为$\ell:\mathcal{H}\times\mathcal{Z}\rightarrow\mathbb{R}_{+}$，
+$\ell$就是损失函数。
+现在我们重新定义真实误差和经验误差：
+$$
+\mathcal{L}_{\mathcal{D}}(h)
+\xlongequal{def}
+\mathbb{E}_{z\sim\mathcal{D}}[\ell(h,z)]
+$$
+$$
+\mathcal{L}_{\mathcal{S}}(h)
+\xlongequal{def}
+\frac{1}{m}\sum^m_{i=1}\ell(h,z_i)
+$$
+同时我们定义常用的损失函数：
+\begin{itemize}
+\item
+0-1损失
+$$
+\ell_{0-1}(h,(x,y))
+\xlongequal{def}
+\begin{cases}
+0& h(x)=y\\
+1& h(x)\neq y
+\end{cases}
+$$
+\item 平方损失
+$$
+\ell_{sq}(h,(x,y))
+\xlongequal{def}
+{(h(x)-y)}^2
+$$
+\end{itemize}
+
+\textbf{
+定义2.3 
+\textit{广义损失函数下的不可知PAC可学习}
+对于集合$\mathcal{Z}$和损失函数
+$\ell:\mathcal{H}\times\mathcal{Z}\rightarrow\mathbb{R}_{+}$，
+若存在一个函数$m_{\mathcal{H}}:{(0,1)}^2\rightarrow\mathcal{N}$和
+一个学习算法，
+使得对于给定的$\epsilon,\delta\in(0,1)$
+和任一分布$\mathcal{D}$，
+当样本数量$m\geq m_{\mathcal{H}}(\epsilon,\delta)$时，
+算法将以不小于$1-\delta$的概率返回一个使
+$$
+\mathcal{L}_{\mathcal{D}}(h)\leq
+\min_{h'\in\mathcal{H}}\mathcal{L}_{\mathcal{D}}(h')+\epsilon
+$$
+成立的假设$h$，其中
+$\mathcal{L}_{\mathcal{D}}(h)=\mathbb{E}_{z\sim\mathcal{D}}[\ell(h,z)]$。
+}
+
+\subsection{思路总结}
+本章主要在于泛化PAC学习的试用范围，
+通过更改假设来让这个理论更具有普适性，
+更贴近生活现实。
+（通俗来说就是通过不断的容忍，
+放缩范围，
+看来搞统计的都是受啊XD）
 
 
+\section{附录1：不等式证明}
+\subsection{Markov Inequality}
+马尔科夫不等式：
+$$
+\mathbb{P}(X\geq a)\leq \frac{\mathbb{E}(Z)}{a}
+$$
+其中$X$是非负的随机变量。
 
-
-
-
+证：
+$$
+\begin{aligned}
+\mathbb{E}(X) &=  \int_0^{+\infty}{xf(x)dx} \\
+	&= \int_0^{a}{xf(x)dx} + \int_a^{+\infty}{xf(x)dx} \\
+	&\leq 
+	\int_0^{a}{0f(x)dx} + \int_a^{+\infty}{af(x)dx}\\
+	&\leq 0 + \int_a^{+\infty}{af(x)dx} 
+   = a\int_a^{+\infty}{f(x)dx} = a\mathbb{P}(X>a)
+\end{aligned}
+$$
+移动一下$a$的位置，不等式得证，
+其中第二行到第三行是将积分中的$x$换成积分下限。
 
 
 
