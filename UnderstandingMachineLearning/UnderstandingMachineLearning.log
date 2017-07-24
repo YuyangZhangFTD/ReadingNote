@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2017.7.14)  16 JUL 2017 18:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2017.7.14)  24 JUL 2017 22:12
 entering extended mode
 **./UnderstandingMachineLearning.tex
 (UnderstandingMachineLearning.tex
@@ -1089,12 +1089,12 @@ LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <10.53937> not available
 (Font)              size <10.95> substituted on input line 2.
 
 Package CJKpunct Info: use punctuation spaces for family 'rm' with punctstyle (
-quanjiao) on input line 21.
+quanjiao) on input line 24.
 )
 \tf@toc=\write3
 \openout3 = `UnderstandingMachineLearning.toc'.
 
- [2]
+ [2] [3]
 Overfull \hbox (2.90823pt too wide) in paragraph at lines 78--89
 \C70/rm/m/n/10.53937/4e -$\OML/cmm/m/it/10.53937  \OT1/cmr/m/n/10.53937 : \OMS
 /cmsy/m/n/10.53937 X ! f\OT1/cmr/m/n/10.53937 0\OML/cmm/m/it/10.53937 ; \OT1/cm
@@ -1110,7 +1110,7 @@ ML/cmm/m/it/10.53937 \OT1/cmr/m/n/10.53937 (\OML/cmm/m/it/10.53937 x\OT1/cmr/m
 /n/10.53937 )]$|\C70/rm/m/n/10.53937/30 |
  []
 
-[3] [4]
+[4] [5]
 Overfull \hbox (0.44807pt too wide) in paragraph at lines 162--169
 []\C70/rm/m/n/10.53937/8b Â \C70/rm/m/n/10.53937/50 G \C70/rm/m/n/10.53937/8b æ
  \C70/rm/m/n/10.53937/61  \C70/rm/m/n/10.53937/54 s \C70/rm/m/n/10.53937/77 @|
@@ -1125,7 +1125,7 @@ rm/m/n/10.53937/8b ∞ \C70/rm/m/n/10.53937/51 ˝ \C70/rm/m/n/10.53937/65 p$\OML/c
 mm/m/it/10.53937 f$\C70/rm/m/n/10.53937/68 
  []
 
-[5]
+[6]
 Overfull \hbox (4.41516pt too wide) detected at line 282
 \OMS/cmsy/m/n/10.53937 D[]\OT1/cmr/m/n/10.53937 (\OMS/cmsy/m/n/10.53937 f\OML/c
 mm/m/it/10.53937 x[]\OMS/cmsy/m/n/10.53937 j\OML/cmm/m/it/10.53937 x[] \OMS/cms
@@ -1139,7 +1139,7 @@ m/it/10.53937 ; :::m; \OMS/cmsy/m/n/10.53937 L[]\OT1/cmr/m/n/10.53937 (\OML/cmm
 cmr/m/n/10.53937 ) = 0\OMS/cmsy/m/n/10.53937 g\OT1/cmr/m/n/10.53937 )
  []
 
-[6] [7] [8] [9]
+[7] [8] [9] [10]
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 522.
 
  (E:\Latex\CTex\MiKTeX\tex\latex\base\omscmr.fd
@@ -1147,60 +1147,107 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.53937> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 522.
- [10] [11]
-[12] (UnderstandingMachineLearning.aux)
+ [11] [12]
+Overfull \hbox (53.91095pt too wide) detected at line 681
+[] []
+ []
+
+[13]
+Overfull \hbox (13.13965pt too wide) detected at line 691
+\OMS/cmsy/m/n/10.53937 D[]\OT1/cmr/m/n/10.53937 (\OMS/cmsy/m/n/10.53937 fS \OT1
+/cmr/m/n/10.53937 : \OMS/cmsy/m/n/10.53937 8\OML/cmm/m/it/10.53937 h \OMS/cmsy/
+m/n/10.53937 2 H\OML/cmm/m/it/10.53937 ; \OMS/cmsy/m/n/10.53937 jL[]\OT1/cmr/m/
+n/10.53937 (\OML/cmm/m/it/10.53937 h\OT1/cmr/m/n/10.53937 ) \OMS/cmsy/m/n/10.53
+937   L[]\OT1/cmr/m/n/10.53937 (\OML/cmm/m/it/10.53937 h\OT1/cmr/m/n/10.53937 )
+\OMS/cmsy/m/n/10.53937 j \OML/cmm/m/it/10.53937 > \OMS/cmsy/m/n/10.53937 g\OT1
+/cmr/m/n/10.53937 ) = \U/msb/m/n/10.53937 P\OT1/cmr/m/n/10.53937 [\OMS/cmsy/m/n
+/10.53937 j[] [] \OML/cmm/m/it/10.53937 [] \OMS/cmsy/m/n/10.53937   \OML/cmm/m
+/it/10.53937 \OMS/cmsy/m/n/10.53937 j \OML/cmm/m/it/10.53937 > \OT1/cmr/m/n/1
+0.53937 ] \OMS/cmsy/m/n/10.53937  \OT1/cmr/m/n/10.53937 2 [](\OMS/cmsy/m/n/10.
+53937  \OT1/cmr/m/n/10.53937 2\OML/cmm/m/it/10.53937 m[]\OT1/cmr/m/n/10.53937 
+)
+ []
+
+[14] [15] [16] [17]
+Overfull \hbox (25.20976pt too wide) in paragraph at lines 883--889
+[]\C70/rm/m/n/10.53937/97  \C70/rm/m/n/10.53937/59 + \C70/rm/m/n/10.53937/4e 
+  \C70/rm/m/n/10.53937/5b ö \C70/rm/m/n/10.53937/5f |\C70/rm/m/n/10.53937/ff 
+| \C70/rm/m/n/10.53937/50 G \C70/rm/m/n/10.53937/8b æ$\OML/cmm/m/it/10.53937 Z
+[]; :::; Z[]$\C70/rm/m/n/10.53937/66 / \C70/rm/m/n/10.53937/72 Ï \C70/rm/m/n/10
+.53937/7a À \C70/rm/m/n/10.53937/54  \C70/rm/m/n/10.53937/52  \C70/rm/m/n/10.
+53937/5e  \C70/rm/m/n/10.53937/76 Ñ \C70/rm/m/n/10.53937/96 è \C70/rm/m/n/10.5
+3937/67 : \C70/rm/m/n/10.53937/53 ÿ \C70/rm/m/n/10.53937/91 œ|\C70/rm/m/n/10.53
+937/ff | \C70/rm/m/n/10.53937/4e ‰$[] \OT1/cmr/m/n/10.53937 = [] [][] \OML/cmm
+/m/it/10.53937 Z[]$|\C70/rm/m/n/10.53937/ff |
+ []
+
+[18]
+Overfull \hbox (3.0496pt too wide) in paragraph at lines 925--929
+\C70/rm/m/n/10.53937/8b ∞$\OML/cmm/m/it/10.53937 h \OT1/cmr/m/n/10.53937 = \OML
+/cmm/m/it/10.53937 \OT1/cmr/m/n/10.53937 (\OML/cmm/m/it/10.53937 b \OMS/cmsy/m
+/n/10.53937   \OML/cmm/m/it/10.53937 a\OT1/cmr/m/n/10.53937 )$\C70/rm/m/n/10.53
+937/54 å$\OML/cmm/m/it/10.53937 p \OT1/cmr/m/n/10.53937 = []$|\C70/rm/m/n/10.53
+937/ff | \C70/rm/m/n/10.53937/53 Ô \C70/rm/m/n/10.53937/4e Â \C70/rm/m/n/10.53
+937/5c  \C70/rm/m/n/10.53937/4e 
+ \C70/rm/m/n/10.53937/5f  \C70/rm/m/n/10.53937/53 Û \C70/rm/m/n/10.53937/8f π 
+\C70/rm/m/n/10.53937/51 ô \C70/rm/m/n/10.53937/4f \$\OML/cmm/m/it/10.53937 e[]$
+|\C70/rm/m/n/10.53937/ff | \C70/rm/m/n/10.53937/8b ∞ \C70/rm/m/n/10.53937/4e :
+$\OML/cmm/m/it/10.53937 e[]$|\C70/rm/m/n/10.53937/30 |
+ []
+
+[19] [20] (UnderstandingMachineLearning.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.41063pt have occurred.
 
  ) 
 Here is how much of TeX's memory you used:
- 14081 strings out of 495237
- 260657 string characters out of 3182391
+ 14221 strings out of 495237
+ 262771 string characters out of 3182391
  277104 words of memory out of 3000000
- 16870 multiletter control sequences out of 15000+200000
- 64734 words of font info for 228 fonts, out of 3000000 for 9000
+ 16986 multiletter control sequences out of 15000+200000
+ 68612 words of font info for 241 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 41i,7n,45p,10457b,290s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,8n,45p,10457b,290s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/s
 imsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS
-/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:
-/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai
-.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Font
-s/simkai.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WIND
-OWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf>
-<C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/sim
-kai.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/F
-onts/simsun.ttc><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simsun.ttc><C:/W
-INDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.t
-tf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/
-simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOW
-S/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C
-:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simka
-i.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fon
-ts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WIN
-DOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc
-><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/si
-msun.ttc><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/
-Fonts/simsun.ttc><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/
-WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.
+/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simhei.ttf><C:
+/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simkai
+.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Font
+s/simhei.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WIND
+OWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf>
+<C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/sim
+kai.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/F
+onts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/W
+INDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simkai.t
+tf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/
+simhei.ttf><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOW
+S/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C
+:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhe
+i.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fon
+ts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WIN
+DOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf
+><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/si
+mhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/
+Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/
+WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simhei.
 ttf><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts
-/simsun.ttc><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDO
-WS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><
-C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simh
+/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDO
+WS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simsun.ttc><
+C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simh
 ei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fo
-nts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simsun.ttc><C:/WI
-NDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.tt
-c><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/s
-imsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS
+nts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WI
+NDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.tt
+f><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/s
+imhei.ttf><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS
 /Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:
-/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simhei
-.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Font
-s/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WIND
+/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun
+.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Font
+s/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simhei.ttf><C:/WIND
 OWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf>
 <C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/sim
-sun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/F
-onts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/W
+hei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/F
+onts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simsun.ttc><C:/W
 INDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.t
 tc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/
 simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOW
@@ -1210,25 +1257,30 @@ n.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fon
 ts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WIN
 DOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc
 ><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/si
-msun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/
-Fonts/simhei.ttf><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/
+msun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/
+Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/
 WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.
-ttc><E:/Latex/CTex/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><E:/Latex/C
-Tex/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><E:/Latex/CTex/MiKTeX/font
-s/type1/public/amsfonts/cm/cmbxti10.pfb><E:/Latex/CTex/MiKTeX/fonts/type1/publi
-c/amsfonts/cm/cmex10.pfb><E:/Latex/CTex/MiKTeX/fonts/type1/public/amsfonts/cm/c
-mmi10.pfb><E:/Latex/CTex/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><E:/La
-tex/CTex/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><E:/Latex/CTex/MiKTeX/
-fonts/type1/public/amsfonts/cm/cmr10.pfb><E:/Latex/CTex/MiKTeX/fonts/type1/publ
-ic/amsfonts/cm/cmr12.pfb><E:/Latex/CTex/MiKTeX/fonts/type1/public/amsfonts/cm/c
-mr17.pfb><E:/Latex/CTex/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><E:/Late
-x/CTex/MiKTeX/fonts/type1/public/amsfonts/cm/cmsl10.pfb><E:/Latex/CTex/MiKTeX/f
-onts/type1/public/amsfonts/cm/cmsy10.pfb><E:/Latex/CTex/MiKTeX/fonts/type1/publ
-ic/amsfonts/cm/cmsy5.pfb><E:/Latex/CTex/MiKTeX/fonts/type1/public/amsfonts/cm/c
-msy7.pfb><E:/Latex/CTex/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on UnderstandingMachineLearning.pdf (12 pages, 851752 bytes).
+ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts
+/simhei.ttf><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDO
+WS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><
+E:/Latex/CTex/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><E:/Latex/CTex/M
+iKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><E:/Latex/CTex/MiKTeX/fonts/typ
+e1/public/amsfonts/cm/cmbxti10.pfb><E:/Latex/CTex/MiKTeX/fonts/type1/public/ams
+fonts/cm/cmex10.pfb><E:/Latex/CTex/MiKTeX/fonts/type1/public/amsfonts/cmextra/c
+mex7.pfb><E:/Latex/CTex/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><E:/La
+tex/CTex/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><E:/Latex/CTex/MiKTeX/
+fonts/type1/public/amsfonts/cm/cmmi7.pfb><E:/Latex/CTex/MiKTeX/fonts/type1/publ
+ic/amsfonts/cm/cmr10.pfb><E:/Latex/CTex/MiKTeX/fonts/type1/public/amsfonts/cm/c
+mr12.pfb><E:/Latex/CTex/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><E:/Lat
+ex/CTex/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><E:/Latex/CTex/MiKTeX/fo
+nts/type1/public/amsfonts/cm/cmr7.pfb><E:/Latex/CTex/MiKTeX/fonts/type1/public/
+amsfonts/cm/cmsl10.pfb><E:/Latex/CTex/MiKTeX/fonts/type1/public/amsfonts/cm/cms
+y10.pfb><E:/Latex/CTex/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><E:/Late
+x/CTex/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><E:/Latex/CTex/MiKTeX/fo
+nts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on UnderstandingMachineLearning.pdf (20 pages, 947399 bytes).
 PDF statistics:
- 728 PDF objects out of 1000 (max. 8388607)
+ 795 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 269 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 273 words of extra memory for PDF output out of 10000 (max. 10000000)
 

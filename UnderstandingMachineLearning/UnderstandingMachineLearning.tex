@@ -588,6 +588,164 @@ $\mathcal{L}_{\mathcal{D}}(h)=\mathbb{E}_{z\sim\mathcal{D}}[\ell(h,z)]$。
 放缩范围，
 看来搞统计的都是受啊XD）
 
+\newpage
+
+% ============================================================
+%
+%			第三章 Learning via Uniform Convergence
+%
+% ============================================================
+
+\section{Learning via Uniform Convergence}
+\subsection{学习的一致收敛性}
+我们希望我们所得到的假设集合$\mathcal{H}$不仅仅只在训练集$\mathcal{S}$上表现良好，
+同样希望它能在真实情况也有相似的表现，
+既不是好一些也不是差一些，是具有相近的性能，即
+$$
+\forall h\in\mathcal{H}, 
+\mathcal{L}_{\mathcal{S}}(h)\approx \mathcal{L}_{\mathcal{D}}(h)
+$$
+当我们的学习到的假设集合$\mathcal{H}$能达到上述期望时，
+我们称该学习到的的假设集合$\mathcal{H}$具有一致收敛性，
+同时，当经验误差和泛化误差的差异小于我们容忍限度$\epsilon$时，
+我们称这时的训练样本为$\epsilon$代表性的。
+
+\textbf{
+定义3.1 
+\textit{$\epsilon$代表性样本}
+当训练样本满足以下不等式时
+$$
+\forall h\in \mathcal{H},
+|\mathcal{L}_{\mathcal{S}}(h)-\mathcal{L}_{\mathcal{D}}(h)|\leq \epsilon
+$$
+这时训练样本$\mathcal{S}$被称为$\epsilon$代表性样本。
+}
+
+\textbf{
+引理3.1 
+假设一个训练集$\mathcal{S}$是$\epsilon/2$代表性的，
+那么任何一个根据ERM准则输出的假设集合$\mathcal{H}$，都满足
+$$
+\mathcal{L}_{\mathcal{D}}(h_{\mathcal{S}})\leq
+\min_{h\in\mathcal{H}}\mathcal{L}_{\mathcal{D}}(h)+\epsilon
+$$
+}
+证明如下：对于$\forall h\in\mathcal{H}$
+$$
+\mathcal{L}_{\mathcal{D}}(h_{\mathcal{S}})\leq
+\mathcal{L}_{\mathcal{S}}(h_{\mathcal{S}})+\frac{\epsilon}{2}\leq
+\mathcal{L}_{\mathcal{S}}(h)+\frac{\epsilon}{2}\leq
+\mathcal{L}_{\mathcal{D}}(h_{\mathcal{S}})+\epsilon
+$$
+其中第一和第三个不等式由$\epsilon/2$代表性的样本保证，第二个不等式是对假设$h$损失的放缩。
+
+\textbf{
+定义3.2 
+\textit{一致收敛}
+存在一个函数$m_{\mathcal{H}}^{UC}:(0,1)^2\rightarrow\mathbb{N}$，
+使得对于所有$\epsilon,\delta\in(0,1)$和任意概率分布$\mathcal{D}$，
+都有当$m\geq m_\mathcal{H}^{UC}$时，
+至少在$1-\delta$的概率下，训练集$\mathcal{S}$是$\epsilon$代表性的，
+假设集合$\mathcal{H}$具有一致收敛性。
+}
+
+\subsection{有限假设是不可知PAC可学习的}
+给定$\epsilon$和$\delta$，
+我们需要找一个样本大小$m$保证：
+对于任何分布$\mathcal{D}$，
+至少在$1-\delta$的概率下，从$\mathcal{D}$中采样得到的
+独立同分布样本$\mathcal{S}=(z_1,...,z_m)$，
+对于$\forall h\in\mathcal{H}$，
+有$|\mathcal{L}_{\mathcal{S}}(h)-\mathcal{L}_{\mathcal{D}}(h)|\leq \epsilon$
+成立，即
+$$
+\mathcal{D}^m(
+\{\mathcal{S}:\forall h\in\mathcal{H},
+|\mathcal{L}_{\mathcal{S}}(h)-\mathcal{L}_{\mathcal{D}}(h)|\leq \epsilon\}
+)\geq 1-\delta
+$$
+根据之前的推导逐步放缩
+$$
+\begin{aligned}
+\{\mathcal{S}:\forall h\in\mathcal{H},
+|\mathcal{L}_{\mathcal{S}}(h)-\mathcal{L}_{\mathcal{D}}(h)|> \epsilon\}
+ &= \bigcup_{h\in\mathcal{H}} 
+\{\mathcal{S}:|\mathcal{L}_{\mathcal{S}}(h)-\mathcal{L}_{\mathcal{D}}(h)|> \epsilon \}\\
+\mathcal{D}^m(
+\{\mathcal{S}:\forall h\in\mathcal{H},
+|\mathcal{L}_{\mathcal{S}}(h)-\mathcal{L}_{\mathcal{D}}(h)|> \epsilon\}
+)&\leq
+\sum_{h\in\mathcal{H}}\mathcal{D}^m(\{\mathcal{S}:\forall h\in\mathcal{H},
+|\mathcal{L}_{\mathcal{S}}(h)-\mathcal{L}_{\mathcal{D}}(h)|> \epsilon\})\\
+\end{aligned}
+$$
+根据大数定律，样本均值会随着样本数量增加，逐渐收敛至总体均值，
+但是大数定律并没有明确说明有多接近，只是说明了收敛的趋势，
+所以我们用Hoeffding Inequality来度量，
+令$\theta_i$为随机变量$\ell(h,z_i)$，假定$\ell\in[0,1]$，有
+$$
+\mathcal{D}^m(\{\mathcal{S}:\forall h\in\mathcal{H},
+|\mathcal{L}_{\mathcal{S}}(h)-\mathcal{L}_{\mathcal{D}}(h)|> \epsilon\})=
+\mathbb{P}[|\frac{1}{m}\sum^m_{i=1}\theta_i-\mu|>\epsilon]\leq
+2\exp(-2m\epsilon^2)
+$$
+所以
+$$
+\begin{aligned}
+\mathcal{D}^m(
+\{\mathcal{S}:\forall h\in\mathcal{H},
+|\mathcal{L}_{\mathcal{S}}(h)-\mathcal{L}_{\mathcal{D}}(h)|> \epsilon\}
+)&\leq
+\sum_{h\in\mathcal{H}}2\exp(-2m\epsilon^2)\\
+&= 2|\mathcal{H}|2\exp(-2m\epsilon^2)\\
+\end{aligned}
+$$
+当我们令
+$$
+m\geq \frac{\log(2|\mathcal{H}|/\delta)}{2\epsilon^2}
+$$
+时就会有
+$$
+\mathcal{D}^m(
+\{\mathcal{S}:\forall h\in\mathcal{H},
+|\mathcal{L}_{\mathcal{S}}(h)-\mathcal{L}_{\mathcal{D}}(h)|> \epsilon\}
+)\leq \delta
+$$
+\textbf{
+推论3.1
+$\mathcal{H}$具有一致收敛性，则其样本复杂度函数是
+$$
+m^{UC}_{\mathcal{H}}(\epsilon,\delta)\leq 
+\lceil \frac{\log(2|\mathcal{H}|/\delta)}{2\epsilon^2} \rceil
+$$
+}
+
+
+\newpage
+
+
+% ============================================================
+%
+%			第四章 The Bias-Complexity Tradeoff
+%
+% ============================================================
+\section{The Bias-Complexity Tradeoff}
+
+
+
+
+
+
+
+\newpage
+
+
+
+% ============================================================
+%
+%			附录1 不等式证明
+%
+% ============================================================
 
 \section{附录1：不等式证明}
 \subsection{Markov Inequality}
@@ -610,6 +768,244 @@ $$
 $$
 移动一下$a$的位置，不等式得证，
 其中第二行到第三行是将积分中的$x$换成积分下限。
+
+\subsection{引理1}
+
+设$Z$是一个取值$[0,1]$的随机变量，假定$\mathbb{E}[Z]=\mu$，
+那么对于任意$a\in (0,1)$，都有
+$$
+\mathbb{P}[Z>1-a]\geq\frac{\mu-(1-a)}{a}
+$$
+
+证：令$Y=1-Z$，则$Y$是非负随机变量，且$\mathbb{Y}=1-\mathbb{Z}=1-\mu$，
+根据马尔科夫不等式
+$$
+\mathbb{P}[Z\leq 1-a]=
+\mathbb{P}[1-Z\geq a]=
+\mathbb{P}[Y\geq a]\leq \frac{\mathbb{E}[Y]}{a}=\frac{1-\mu}{a}
+$$
+所以
+$$
+\mathbb{P}[Z>1-a]\geq 1-\frac{1-\mu}{a} = \frac{a+\mu-1}{a}
+$$
+
+
+\subsection{Chebyshev Inequality}
+切比雪夫不等式：
+$$
+\forall a>0,
+\mathbb{P}[|Z-\mathbb{E}[Z]|\geq a] = 
+\mathbb{P}[(Z-\mathbb{E}[Z])^2 \geq a^2] \leq
+\frac{Var[Z]}{a^2}
+$$
+其中$Var[Z]=\mathbb{E}[(Z-\mathbb{E}[Z])^2]$是$Z$的方差。
+
+证明：令$Y=(Z-\mathbb{E}[Z])^2$带入马尔科夫不等式即可得证。
+
+\subsection{引理2}
+设$Z_1,...,Z_m$是独立同分布的随机变量，
+假定$\mathbb{E}[Z]=\mu$且$Var[Z]\leq 1$，
+那么对于任意的$\delta\in(0,1)$有
+$$
+|\frac{1}{m}\sum^m_{i=1}Z_i-\mu|\leq \sqrt{\frac{1}{\delta m}}
+$$
+成立的概率大于$1-\delta$。
+
+证：由切比雪夫不等式，对于$a>0$，我们有
+$$
+\mathbb{P}[|\frac{1}{m}\sum^m_{i=1}Z_i-\mu|>a]\leq 
+\frac{Var[Z_1]}{ma^2}\leq \frac{1}{ma^2}
+$$
+令等式右边等于$\delta$即可得证。
+
+
+\subsection{Chernoff Bound}
+切尔诺夫界：
+假设$Z_1,...,Z_m$是独立的伯努利变量，
+其中任意的$i$都有
+$\mathbb{P}[Z_i=1]=p_i$。
+令$p=\sum^m_{i=1}p_i$和
+$Z=\sum^m_{i=1}Z_i$，
+对于$t>0$有
+$$
+\mathbb{P}[Z>(1+\delta)p]=
+\mathbb{P}[e^{tZ}>e^{t(1+\delta)p}]\leq
+\frac{\mathbb{E}[e^{tZ}]}{e^{t(1+\delta)p}}
+$$
+其中，第一个等号成立是因为$e^x$单调递增，
+之后的不等关系成立是因为马尔科夫不等式。
+
+\subsection{引理3}
+根据之前的切尔诺夫界，
+对于$\mathbb{E}[e^{tZ}]$有
+$$
+\begin{aligned}
+\mathbb{E}[e^{tZ}] &= \mathbb{E}[e^{t\sum_iZ_i}]= \mathbb{E}[\prod_ie^{tZ_i}]\\
+	&= \prod_i\mathbb{E}[e^{tZ_i}]\\
+	&= \prod_i(p_ie^{(1\times t)}+(1-p_i)e^{0\times t})\\
+	&= \prod_i(1+p_i(e^t-1))\\
+	&\leq \prod_ie^{p_i(e^t-1)}\\
+	&= e^{\sum_ip_i(e^t-1)}\\
+	&= e^{p(e^t-1)}
+\end{aligned}
+$$
+其中不等式成立因为$e^x\approx 1+x+\sum^\infty_{n=2}\frac{x^n}{n!}$，
+根据不同情况更改$t$的值可以得到不同的概率上界。
+
+取$t=\log(1+\delta)$，则
+$$
+\mathbb{P}[Z>(1+\delta)p]\leq e^{-h(\delta)p}
+$$
+其中
+$$
+h(\delta)=(1+\delta)\log(1+\delta)-\delta
+$$
+根据$h(\delta)\geq \frac{\delta^2}{(2+2\delta/3)}$有
+$$
+\mathbb{P}[Z>(1+\delta)p]\leq e^{-p\frac{\delta^2}{2+2a/3}}
+$$
+
+取$t=-log(1-\delta)$则有
+$$
+\mathbb{P}[Z<(1-\delta)p]\leq
+\frac{e^{-\delta p}}{e^{(1-\delta)\log(1-\delta)p}}=
+e^{-ph(-\delta)}
+$$
+根据$h(-\delta)\geq h(\delta)$有
+$$
+\mathbb{P}[Z<(1-\delta)p]\leq
+e^{-ph(\delta)}\leq e^{ph(\delta)}\leq
+e^{-p\frac{\delta^2}{2+2a/3}}
+$$
+
+
+\subsection{Hoeffding Inequality}
+霍夫丁不定式：
+假设$Z_1,...,Z_m$是独立同分布的随机变量，
+令$\overline{Z}=\frac{1}{m}\sum^m_{i=1}Z_i$，
+假定$\mathbb{E}[\bar{Z}]=\mu$且
+$\mathbb{P}[a\leq Z_i \leq b]=1$对于所有$i$成立，
+那么对于任意$\epsilon$有
+$$
+\mathbb{P}[|\frac{1}{m}\sum^m_{i=1}Z_i-\mu|>\epsilon]\leq
+2e^{(-\frac{-2m\epsilon^2}{(b-a)^2})}
+$$
+
+证：
+记$X_i=Z_i-\mathbb{E}[Z_i]$且$\bar{X}$，
+且$\bar{X}=\frac{1}{m}\sum^m_{i=1}X_i$，
+对于任意的$\lambda, \epsilon > 0$有
+$$
+\mathbb{P}[\bar{X}-\epsilon]=
+\mathbb{P}[e^{-\lambda\bar{X}}-e^{-\lambda\epsilon}]\leq
+e^{-\lambda\epsilon}\mathbb{E}[e^{-\lambda\bar{X}}]
+$$
+其中
+$$
+\mathbb{E}[e^{-\lambda\bar{X}}]=
+\mathbb{E}[\prod_i e^{-\lambda X_i/m}]=
+\prod_i\mathbb{E}[e^{-\lambda X_i/m}]
+$$
+
+对于凸函数$f(x)=e^x$，
+对于任意$\alpha \in [0,1]$和$x\in[a,b]$都有
+满足
+$$f(x)\leq \alpha f(a) + (1-\alpha) f(b)
+$$
+令$\alpha=\frac{b-x}{b-a}\in[0,1]$，则
+$$
+e^{\lambda x}\leq 
+\frac{b-x}{b-a}e^{\lambda a}+\frac{x-a}{b-a}e^{\lambda b}
+$$
+当$\mathbb{E}[X]=0$时，对两边同时取期望
+$$
+\mathbb{E}[e^{\lambda x}]\leq
+\frac{b-\mathbb{E}[X]}{b-a}e^{\lambda a}+\frac{\mathbb{E}[X]-a}{b-a}e^{\lambda b}=
+\frac{b}{b-1}e^{\lambda a} - \frac{b}{b-1}e^{\lambda b} 
+$$
+记$h=\lambda(b-a)$和$p=\frac{-a}{b-a}$，
+可以将上式右边写作$e^{-hp+\log(1-p+pe^h)}$，记为$e^{L(h)}$。
+我们将$L(h)$作泰勒展开
+$$
+L(h)=\frac{L(0)}{0!}(x-0)^0+\frac{L'(0)}{1!}(x-0)^1+\frac{L''(0)}{2!}(x-0)^2+o(x^2)
+$$
+易得$L(0)=L'(0)=0$，而
+$$
+L''(h)=\frac{(1-p)pe^h}{(1-p+pe^h)^2}
+$$
+得$L''(0)=(1-p)p\leq 1/4$，将其放缩后得到
+$$
+L(h)=\frac{L''(0)}{2!}(x-0)^2+o(x^2)\leq
+\frac{1/4}{2!}(x-0)^2=
+\frac{h^2}{8}
+$$
+将其回带，对于任意$i$有
+$$
+\mathbb{E}[e^{\lambda X_i/m}]\leq e^{\frac{\lambda^2(b-a)^2}{8m^2}}
+$$
+因此
+$$
+\mathbb{E}[\bar{X}\geq \epsilon]\leq
+e^{-\lambda\epsilon}\prod_ie^{\frac{\lambda^2(b-a)^2}{8m^2}}=
+e^{-\lambda\epsilon+\frac{\lambda^2(b-a)^2}{8m}}
+$$
+此时我们令$\lambda=4m\epsilon/(b-a)^2$
+$$
+\mathbb{E}[\bar{X}\geq \epsilon]\leq
+e^{-4m\epsilon/(b-a)^2\epsilon+\frac{(4m\epsilon/(b-a)^2)^2(b-a)^2}{8m}}
+$$
+$$
+\mathbb{E}[\bar{X}\geq \epsilon]\leq
+e^{-\frac{2m\epsilon^2}{(b-a)^2}}
+$$
+将$\bar{X}_i=Z_i-\mathbb{E}[Z_i]$带回，不等式得证。
+
+
+
+
+
+%
+%$$
+%L(h)=-hp+\log(1-p+pe^h)\leq\frac{h^2}{8}
+%$$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
