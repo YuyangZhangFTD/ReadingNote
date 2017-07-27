@@ -34,6 +34,5 @@ gen/
 *.aux
 *.log
 *.gz
-*.tex
 *.toc
 proguard/
