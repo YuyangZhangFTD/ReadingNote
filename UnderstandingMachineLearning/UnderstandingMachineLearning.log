@@ -1,7 +1,10 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2017.7.14)  24 JUL 2017 22:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2017.7.14)  29 JUL 2017 18:15
 entering extended mode
-**./UnderstandingMachineLearning.tex
-(UnderstandingMachineLearning.tex
+**C:/Users/w10/Desktop/ReadingNote/UnderstandingMachineLearning/UnderstandingMa
+chineLearning.tex
+
+(C:/Users/w10/Desktop/ReadingNote/UnderstandingMachineLearning/UnderstandingMac
+hineLearning.tex
 LaTeX2e <2016/03/31>
 Babel <3.9q> and hyphenation patterns for 1 language(s) loaded.
 (E:\Latex\CTex\MiKTeX\tex\latex\ctex\ctexart.cls
@@ -1089,12 +1092,12 @@ LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <10.53937> not available
 (Font)              size <10.95> substituted on input line 2.
 
 Package CJKpunct Info: use punctuation spaces for family 'rm' with punctstyle (
-quanjiao) on input line 24.
-)
+quanjiao) on input line 25.
+[2])
 \tf@toc=\write3
 \openout3 = `UnderstandingMachineLearning.toc'.
 
- [2] [3]
+ [3]
 Overfull \hbox (2.90823pt too wide) in paragraph at lines 78--89
 \C70/rm/m/n/10.53937/4e -$\OML/cmm/m/it/10.53937  \OT1/cmr/m/n/10.53937 : \OMS
 /cmsy/m/n/10.53937 X ! f\OT1/cmr/m/n/10.53937 0\OML/cmm/m/it/10.53937 ; \OT1/cm
@@ -1169,7 +1172,7 @@ n/10.53937 (\OML/cmm/m/it/10.53937 h\OT1/cmr/m/n/10.53937 ) \OMS/cmsy/m/n/10.53
  []
 
 [14] [15] [16] [17]
-Overfull \hbox (25.20976pt too wide) in paragraph at lines 883--889
+Overfull \hbox (25.20976pt too wide) in paragraph at lines 884--890
 []\C70/rm/m/n/10.53937/97  \C70/rm/m/n/10.53937/59 + \C70/rm/m/n/10.53937/4e 
   \C70/rm/m/n/10.53937/5b š \C70/rm/m/n/10.53937/5f |\C70/rm/m/n/10.53937/ff 
 | \C70/rm/m/n/10.53937/50 G \C70/rm/m/n/10.53937/8b ¾$\OML/cmm/m/it/10.53937 Z
@@ -1182,7 +1185,7 @@ Overfull \hbox (25.20976pt too wide) in paragraph at lines 883--889
  []
 
 [18]
-Overfull \hbox (3.0496pt too wide) in paragraph at lines 925--929
+Overfull \hbox (3.0496pt too wide) in paragraph at lines 926--930
 \C70/rm/m/n/10.53937/8b °$\OML/cmm/m/it/10.53937 h \OT1/cmr/m/n/10.53937 = \OML
 /cmm/m/it/10.53937 \OT1/cmr/m/n/10.53937 (\OML/cmm/m/it/10.53937 b \OMS/cmsy/m
 /n/10.53937   \OML/cmm/m/it/10.53937 a\OT1/cmr/m/n/10.53937 )$\C70/rm/m/n/10.53
@@ -1202,13 +1205,13 @@ LaTeX Font Warning: Size substitutions with differences
 
  ) 
 Here is how much of TeX's memory you used:
- 14221 strings out of 495237
- 262771 string characters out of 3182391
+ 14222 strings out of 495237
+ 262957 string characters out of 3182391
  277104 words of memory out of 3000000
  16986 multiletter control sequences out of 15000+200000
  68612 words of font info for 241 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 41i,8n,45p,10457b,290s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,8n,45p,10517b,290s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/s
 imsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS
 /Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simhei.ttf><C:
@@ -1278,7 +1281,7 @@ amsfonts/cm/cmsl10.pfb><E:/Latex/CTex/MiKTeX/fonts/type1/public/amsfonts/cm/cms
 y10.pfb><E:/Latex/CTex/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><E:/Late
 x/CTex/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><E:/Latex/CTex/MiKTeX/fo
 nts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on UnderstandingMachineLearning.pdf (20 pages, 947399 bytes).
+Output written on UnderstandingMachineLearning.pdf (20 pages, 948807 bytes).
 PDF statistics:
  795 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

@@ -35,4 +35,5 @@ gen/
 *.log
 *.gz
 *.toc
+*.png
 proguard/
