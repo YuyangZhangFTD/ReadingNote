@@ -6,6 +6,8 @@
 \usepackage{amssymb}
 \DeclareMathOperator*{\argmax}{arg\,max}
 \usepackage{enumerate}
+\usepackage{graphicx}
+
 
 
 
@@ -385,10 +387,10 @@ $$
 \item 怎么解决？
 \item 降低采样失败概率至我们可以容忍的范围，小于$\delta$。
 \item 采样失败的概率上限小于$\delta$。
-\item $\sup{\mathcal{D}^m
+\item $\sup{\mathcal{D}^m。
 (\{x_i|x_i\in\mathcal{S},i=1,...m,
 \mathcal{L}_{\mathcal{D},f}(h_{\mathcal{S}})>\epsilon
-\})}=|\mathcal{H}|e^{-\epsilon m}\leq \delta$
+\})}=|\mathcal{H}|e^{-\epsilon m}\leq \delta$。
 \item $m \geq \frac{\ln(|\mathcal{H}|/\delta)}{\epsilon}$
 \item 当样本足够充足时，学习到的假设概率近似正确。
 \end{enumerate}
@@ -730,12 +732,169 @@ $$
 %
 % ============================================================
 \section{The Bias-Complexity Tradeoff}
+\subsection{误差分解}
+对于一个预测任务，
+我们可以将由经验风险最小化得到的预测器误差分解为两部分：
+逼近误差和估计误差，记为
+$$
+\mathcal{L}_{\mathcal{D}}=
+\epsilon_{app}+\epsilon_{est}
+$$
+其中逼近误差
+$$
+\epsilon_{app}=\min_{h\in\mathcal{H}}
+\mathcal{L}_{\mathcal{D}}(h)
+$$
+和估计误差
+$$
+\epsilon_{est}=
+\mathcal{L}_{\mathcal{D}}(h_\mathcal{S})-
+\min_{h\in\mathcal{H}}
+\mathcal{L}_{\mathcal{D}}(h)
+$$
+具体解释一下就是：
+逼近误差，是一个假设类集合中，
+所有假设能取得最好可能结果，
+此时的泛化误差；
+而估计误差，
+是根据经验风险最小化原则，
+在有限样本上，
+在假设类集合中，
+能学习到的最好的假设的泛化误差。
+因为在样本上学习到的最好的假设并不一定在真实情况中最好，
+$h_\mathcal{S}$是我们对$\min_{h\in\mathcal{H}}
+\mathcal{L}_{\mathcal{D}}(h)$中的$h$的估计。
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=4in]{1.png}
+\caption{误差分解示意图}
+\end{figure}
+
+由逼近误差和估计误差的定义我们可知，
+逼近误差与选择假设集合有关，
+也就是选择模型种类有关，
+用决策树还是对率回归来解决问题，
+会产生不同的逼近误差；
+而估计误差，
+则与假设集合的大小、样本集的大小和复杂度相关，
+样本数量越少，
+假设集合中假设数量越多，
+则估计误差就会越大。
+在进行一个任务的时候，
+如果选择丰富的假设集合，
+此处的丰富可以理解为参数较多，模型较为复杂，
+模型的capacity较大的模型，
+则逼近误差就会较小，
+模型会更容易逼近真是分布，
+但同时，
+参数多、复杂的模型，
+会增加估计误差，
+样本数量和模型复杂度都会大大增加估计误差。
+此时我们就要面临一个权衡，
+这被称为偏差-复杂度权衡（Bias-Complexity Tradeoff），
+选择合适的模型就更为重要。
+
+通常研究人员说设计一个模型，
+就是通过减少逼近误差来减少总体的泛化误差，
+我们一般做的调参，就是根据经验风险最小化准则，
+来降低估计误差。
+
+写到这里，我突然想起之前吴恩达说的，
+未来是属于深度学习的言论，
+他说机器学习模型的表现会随着样本量增加而变好，
+但是不同模型上限不同。
+随着数据量的增加，
+传统算法模型capacity的上限远远低于大规模的深度学习模型，
+同等数据，逼近误差深度学习模型会小得多，
+但数据越来越多越来越多，
+我们的估计误差也会减少，
+当减少到我们足够接受的时候，
+深度学习模型自然就成为机器学习的未来了。
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=4in]{2.png}
+\caption{模型表现示意图}
+\end{figure}
+
+
+\subsection{偏差方差分解}
+此处我再写点周志华老师书上写的内容吧，
+也是对同一个问题的不同表述和解释。
+我们对学习算法的期望预测为
+$$
+\bar{f}(x)=\mathbb{E}_{\mathcal{D}}[f(x;\mathcal{D})]
+$$
+使用样本数相同的不同训练集产生的方差为
+$$
+var(x)=\mathbb{E}_{\mathcal{D}}[(f(x;\mathcal{D})-\bar{f}(x))^2]
+$$
+噪声为
+$$
+\epsilon^2=\mathbb{E}_{\mathcal{D}}[(y_{\mathcal{D}}-y)^2]
+$$
+期望输出与真实标记的差别为
+$$
+bias^2(x)=(\bar{f}(x)-y)^2
+$$
+进行误差分解之后我们有
+$$
+\mathbb{E}(f;\mathcal{D})=
+bias^2(x)+var(x)+\epsilon^2
+$$
+具体如下图所示
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=4in]{3.png}
+\caption{偏差-方差分解}
+\end{figure}
+
+所以周老师课上这样总结的，
+模型的泛化能力由这几方面决定：
+\begin{enumerate}
+\item
+学习算法本身的能力$bias$，
+也就是逼近误差；
+\item
+数据的充分性$var$，
+也就是估计误差；
+\item
+学习任务本身难度$\epsilon^2$，
+数据有限，
+真理只能接近，却不能到达，
+此处的平方仅表示数值上大于$0$。
+\end{enumerate}
+
+具体的分解步骤大家可以看周老师的西瓜书p44。
 
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+\newpage
+
+
+
+
+% ============================================================
+%
+%			第五章 The VC-Dimension
+%
+% ============================================================
+\section{The VC-Dimension}
 
 
 \newpage
@@ -761,9 +920,9 @@ $$
 \begin{aligned}
 \mathbb{E}(X) &=  \int_0^{+\infty}{xf(x)dx} \\
 	&= \int_0^{a}{xf(x)dx} + \int_a^{+\infty}{xf(x)dx} \\
-	&\leq 
+	&\geq 
 	\int_0^{a}{0f(x)dx} + \int_a^{+\infty}{af(x)dx}\\
-	&\leq 0 + \int_a^{+\infty}{af(x)dx} 
+	&\geq 0 + \int_a^{+\infty}{af(x)dx} 
    = a\int_a^{+\infty}{f(x)dx} = a\mathbb{P}(X>a)
 \end{aligned}
 $$
